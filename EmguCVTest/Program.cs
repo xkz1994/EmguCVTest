@@ -77,8 +77,8 @@ var resultImage = sourceImage.MatchTemplate(templateImage, TemplateMatchingType.
 // 获取匹配结果中最大的值和其坐标
 resultImage.MinMax(out var minVal, out var maxVal, out var minLoc, out var maxLoc);
 var ptPos = new Point(maxLoc[0].X, maxLoc[0].Y); // 匹配返回的是模板的左上角位置
-// ptPos.X += templateImage.Width / 2; // 移动到模板的右下角
-// ptPos.Y += templateImage.Height / 2; // 移动到模板的右下角
+// ptPos.X += templateImage.Width / 2; // 移动到模板的中心位置
+// ptPos.Y += templateImage.Height / 2; // 移动到模板的中心位置
 // 在源图像中绘制矩形框，标记匹配结果
 var matchRect = new Rectangle(ptPos, templateImage.Size);
 sourceImage.Draw(matchRect, new Bgr(0, 0, 255), 2);
